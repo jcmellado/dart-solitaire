@@ -123,7 +123,7 @@ class Board {
   void dragStart(Card card, int x, int y) {
     if (_dragged.isEmpty) {
       if (card.pile.canDrag(card)) {
-        _dragged.addAll(card.pile.drag(card).mappedBy((card) => new Drag(card, x, y)));
+        _dragged.addAll(card.pile.drag(card).map((card) => new Drag(card, x, y)));
       }
     }
   }
@@ -142,7 +142,7 @@ class Board {
 
       } else {
         var source = card.pile;
-        var cards = _dragged.mappedBy((drag) => drag.card).toList();
+        var cards = _dragged.map((drag) => drag.card).toList();
 
         var commands = new List<Command>();
         commands.add(new DragCommand(source, target, cards));
