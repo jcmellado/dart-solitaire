@@ -27,7 +27,7 @@ class Deck {
   static const num NUM_SUITS = 4;
   static const num NUM_CARDS_BY_SUIT = NUM_CARDS ~/ NUM_SUITS;
 
-  final List<Card> _cards = new List<Card>.fixedLength(NUM_CARDS);
+  final List<Card> _cards = new List<Card>(NUM_CARDS);
 
   Deck() {
     _populateCards();
