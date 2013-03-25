@@ -26,8 +26,8 @@ class Board {
   final Pile _stock = new Stock();
   final Pile _waste = new Waste();
   final Pile _draw = new Draw();
-  final List<Pile> _columns = new List<Pile>.fixedLength(7);
-  final List<Pile> _foundations = new List<Pile>.fixedLength(4);
+  final List<Pile> _columns = new List<Pile>(7);
+  final List<Pile> _foundations = new List<Pile>(4);
   final List<Drag> _dragged = new List<Drag>();
   final Commander _commander = new Commander();
 

@@ -67,8 +67,7 @@ abstract class Pile extends TokenSprite {
 
   bool canDrag(Card card) => card.isFaceUp;
 
-  List<Card> drag(Card card) =>
-    _cards.getRange(_cards.indexOf(card), length - _cards.indexOf(card));
+  List<Card> drag(Card card) => _cards.sublist(_cards.indexOf(card));
 
   void _stack(Card card) {
     card.offsetTo(this, 0, 0);

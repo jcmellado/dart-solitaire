@@ -59,7 +59,8 @@ abstract class Sprite implements Comparable {
 
   void draw() {
     _canvas.context2d.globalAlpha = alpha;
-    _canvas.context2d.drawImage(spriteSheet.image, ox, oy, ow, oh, x, y, width, height);
+    _canvas.context2d.drawImageScaledFromSource(spriteSheet.image,
+        ox, oy, ow, oh, x, y, width, height);
   }
 
   void moveTo(num left, num top) {

@@ -140,14 +140,14 @@ class Game {
     if (event.button == 0) {
       var dragged = _hovered(event);
       if (dragged is Card) {
-        _board.dragStart(dragged, event.offsetX, event.offsetY);
+        _board.dragStart(dragged, event.offset.x, event.offset.y);
       }
     }
     event.preventDefault();
   }
 
   void _onMouseMove(html.MouseEvent event) {
-    _board.mouseMove(event.pageX - _container.offsetLeft, event.pageY - _container.offsetTop);
+    _board.mouseMove(event.page.x - _container.offsetLeft, event.page.y - _container.offsetTop);
 
     var hovered;
     if (identical(event.target as html.Element, _canvas)) {
@@ -249,5 +249,5 @@ class Game {
   }
 
   Sprite _hovered(html.MouseEvent event) =>
-    _renderer.hovered(event.offsetX, event.offsetY);
+    _renderer.hovered(event.offset.x, event.offset.y);
 }
