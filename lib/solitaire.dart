@@ -23,7 +23,7 @@
 library solitaire;
 
 import "dart:math" as math;
-import "dart:json" as json;
+import "dart:convert" as convert;
 import "dart:html" as html;
 import "dart:async" as async;
 

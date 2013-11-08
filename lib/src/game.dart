@@ -29,7 +29,7 @@ class Game {
   final Deck _deck = new Deck();
   final Board _board = new Board();
   final Renderer _renderer = new Renderer();
-  final html.Element _container = html.query("#container");
+  final html.Element _container = html.querySelector("#container");
   final Stopwatch _lastClick = new Stopwatch();
 
   Game() {
@@ -72,10 +72,10 @@ class Game {
     html.window.onMouseMove.listen(_onMouseMove);
     html.window.onMouseUp.listen(_onMouseUp);
 
-    _container.query("#undo").onClick.listen(_onClickUndo);
-    _container.query("#restart").onClick.listen(_onClickRestart);
-    _container.query("#new").onClick.listen(_onClickNew);
-    _container.query("#settings").onClick.listen(_onClickSettings);
+    _container.querySelector("#undo").onClick.listen(_onClickUndo);
+    _container.querySelector("#restart").onClick.listen(_onClickRestart);
+    _container.querySelector("#new").onClick.listen(_onClickNew);
+    _container.querySelector("#settings").onClick.listen(_onClickSettings);
 
     html.window.requestAnimationFrame(_update);
   }

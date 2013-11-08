@@ -77,12 +77,12 @@ class Settings {
   }
 
   void save() {
-    html.window.localStorage[_KEY] = json.stringify(this);
+    html.window.localStorage[_KEY] = convert.JSON.encode(this);
   }
 
   static Map _restore() {
     var string = html.window.localStorage[_KEY];
 
-    return string == null ? _DEFAULT_SETTINGS : json.parse(string);
+    return string == null ? _DEFAULT_SETTINGS : convert.JSON.decode(string);
   }
 }

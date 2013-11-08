@@ -32,7 +32,7 @@ class Renderer {
   }
 
   void draw() {
-    _canvas.context2d.drawImageScaled(_settings.backgroundImage.image,
+    _canvas.context2D.drawImageScaled(_settings.backgroundImage.image,
         0, 0, _canvas.width, _canvas.height);
 
     _sprites.sort();
