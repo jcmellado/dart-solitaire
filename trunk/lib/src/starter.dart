@@ -24,7 +24,7 @@ part of solitaire;
 
 final Settings _settings = new Settings();
 
-final html.CanvasElement _canvas = html.query("#canvas");
+final html.CanvasElement _canvas = html.querySelector("#canvas");
 
 void start() {
   new Game().start();

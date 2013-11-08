@@ -28,7 +28,7 @@ class Overlay {
 
   Overlay(String basename)
     : _basename = basename,
-      _overlay = html.query("#overlay-${basename}");
+      _overlay = html.querySelector("#overlay-${basename}");
 
   void open() {
     _setVisible(true);
@@ -47,7 +47,7 @@ class ModalWindow extends Overlay {
   async.StreamSubscription _subscription;
 
   ModalWindow(String basename) : super(basename) {
-    _subscription = _overlay.query(".close").onClick.listen(_onClose);
+    _subscription = _overlay.querySelector(".close").onClick.listen(_onClose);
   }
 
   void addButton(String text, void callback()) {
@@ -56,13 +56,13 @@ class ModalWindow extends Overlay {
       ..text = text
       ..onClick.listen((_) => callback());
 
-    _overlay.query(".modal-footer").append(button);
+    _overlay.querySelector(".modal-footer").append(button);
   }
 
   void close() {
     _subscription.cancel();
 
-    _overlay.query(".modal-footer").children.clear();
+    _overlay.querySelector(".modal-footer").children.clear();
 
     super.close();
   }
@@ -75,7 +75,7 @@ class ModalWindow extends Overlay {
 class MessageBox extends ModalWindow{
 
   MessageBox(String message) : super("msgbox") {
-    _overlay.query("#message-${_basename}").text = message;
+    _overlay.querySelector("#message-${_basename}").text = message;
   }
 }
 
@@ -85,9 +85,9 @@ class SettingsDialog extends ModalWindow {
   html.SelectElement _front;
 
   SettingsDialog() : super("settings") {
-    _draw = _overlay.query("#draw-${_basename}");
-    _background = _overlay.query("#background-${_basename}");
-    _front = _overlay.query("#front-${_basename}");
+    _draw = _overlay.querySelector("#draw-${_basename}");
+    _background = _overlay.querySelector("#background-${_basename}");
+    _front = _overlay.querySelector("#front-${_basename}");
   }
 
   void addDrawOptions(int current) {
@@ -118,7 +118,7 @@ class SettingsDialog extends ModalWindow {
     for (var option in options) {
       var value = option.toString();
 
-      var element = new html.OptionElement(value, value, false, value == current);
+      var element = new html.OptionElement(data: value, value: value, selected: value == current);
 
       select.append(element);
     }

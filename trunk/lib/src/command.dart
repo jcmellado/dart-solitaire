@@ -141,7 +141,11 @@ class AutoFaceUpCommand implements UndoableCommand {
 
   void undo() {
     if (!_pile.isEmpty) {
-      _faceUp ? _pile.top.faceUp() : _pile.top.faceDown();
+      if (_faceUp) {
+        _pile.top.faceUp();
+      } else {
+        _pile.top.faceDown();
+      }
     }
   }
 }
