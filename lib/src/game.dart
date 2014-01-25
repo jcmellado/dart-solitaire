@@ -48,7 +48,7 @@ class Game {
   }
 
   void _newGame() {
-    _deck.shuffle(new math.Random().nextInt(1 << 32));
+    _deck.shuffle(new math.Random().nextInt((1 << 16) - 1));
     _restart();
   }
 

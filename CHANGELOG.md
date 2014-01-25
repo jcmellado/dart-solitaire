@@ -1,4 +1,8 @@
 
+#### 0.3.0 - Jan 25, 2014
+
+  * Updated README.md, LICENSE.txt and CHANGELOG.md
+
 #### 0.2.0 - Nov 08, 2013
 
   * Replaced JSON package with the new convert one
